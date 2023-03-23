@@ -70,7 +70,7 @@ end
 
 When(/^client want to delete pet by id$/) do
   puts $pet_id
-  url = URI("#{base_uri}/pet/9223372036854775807")
+  url = URI("#{base_uri}/pet/#{$pet_id}")
 
   $response = HTTParty.delete(url)
 end

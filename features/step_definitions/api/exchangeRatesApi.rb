@@ -47,6 +47,7 @@ When(/^user use invalid params$/) do
   https = Net::HTTP.new(url.host, url.port)
   https.use_ssl = true
 
+  #binding.pry
   request = Net::HTTP::Get.new(url)
   request['apikey'] = $token
 
