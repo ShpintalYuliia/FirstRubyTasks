@@ -30,7 +30,8 @@ When(/^client sends POST request to add new pet$/) do
   request.body = payload.to_json
 
   $response = http.request(request)
-  $pet_id = $response["id"]
+  $pet_id = JSON.parse($response.body)["id"]
+  #binding.pry
   puts $pet_id
   #puts $response.read_body
 end
